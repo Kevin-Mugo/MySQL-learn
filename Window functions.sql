@@ -63,7 +63,8 @@ JOIN employee_salary esal
 ON edem.employee_id = esal.employee_id
 ;
 
--- RANK and DENSE RANK
+-- RANKand DENSE RANK
+-- positional vs numerical
 
 SELECT edem.first_name , esal.last_name, gender ,salary, 
 ROW_NUMBER() OVER (PARTITION BY gender ORDER BY salary DESC ) AS row_no,
@@ -73,4 +74,5 @@ JOIN employee_salary esal
 ON edem.employee_id = esal.employee_id
 ;
 
+ 
 
